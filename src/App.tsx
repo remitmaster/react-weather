@@ -1,5 +1,18 @@
+import React from "react";
+import { Route, Switch } from "react-router";
+import { Home } from "./pages/Home/Home";
+import { MonthStatistics } from "./pages/MonthStatistics/MonthStatistics";
+import { Header } from "./shared/Header/Header";
 import "./styles/index.scss";
 
 export default function App() {
-  return <div className="App">тест asdadss</div>;
+  return (
+    <div className="container">
+      <Header />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/month-statistics" exact component={MonthStatistics} />
+      </Switch>
+    </div>
+  );
 }
